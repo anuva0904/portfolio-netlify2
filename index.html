@@ -1795,48 +1795,135 @@ footer{
 <section id="contact">
   <span class="section-label">07 — Contact</span>
   <div class="contact-grid">
-    <div>
-      <h2 class="contact-heading parallax-heading reveal">Let's <em>Build</em><br>Something<br>Together</h2>
-      <div class="social-links">
-        <a href="mailto:singhanuva4@gmail.com" class="social-link reveal">
-          <span class="social-link-label">Email</span>
-          singhanuva4@gmail.com
-        </a>
-        <a href="https://instagram.com/walt.byte" target="_blank" class="social-link reveal">
-          <span class="social-link-label">Instagram</span>
-          @walt.byte
-        </a>
-        <a href="https://linkedin.com/in/anuva-singh-9796a2247" target="_blank" class="social-link reveal">
-          <span class="social-link-label">LinkedIn</span>
-          linkedin.com/in/anuva-singh-9796a2247
-        </a>
-        <a href="https://github.com/anuva0904" target="_blank" class="social-link reveal">
-          <span class="social-link-label">GitHub</span>
-          github.com/anuva0904
-        </a>
-        <a href="https://leetcode.com/u/anuva0904/" target="_blank" class="social-link reveal">
-          <span class="social-link-label">LeetCode</span>
-          leetcode.com/u/anuva0904
-        </a>
-      </div>
+    <!-- LEFT SIDE -->
+
+<div>
+
+  <h2 class="contact-heading parallax-heading reveal">
+    Let's <em>Build</em><br>
+    Something<br>
+    Together
+  </h2>
+
+  <div class="social-links">
+
+    <a href="mailto:singhanuva4@gmail.com"
+       class="social-link reveal">
+      <span class="social-link-label">Email</span>
+      singhanuva4@gmail.com
+    </a>
+
+    <a href="https://instagram.com/walt.byte"
+       target="_blank"
+       class="social-link reveal">
+      <span class="social-link-label">Instagram</span>
+      @walt.byte
+    </a>
+
+    <a href="https://linkedin.com/in/anuva-singh-9796a2247"
+       target="_blank"
+       class="social-link reveal">
+      <span class="social-link-label">LinkedIn</span>
+      linkedin.com/in/anuva-singh-9796a2247
+    </a>
+
+    <a href="https://github.com/anuva0904"
+       target="_blank"
+       class="social-link reveal">
+      <span class="social-link-label">GitHub</span>
+      github.com/anuva0904
+    </a>
+
+    <a href="https://leetcode.com/u/anuva0904/"
+       target="_blank"
+       class="social-link reveal">
+      <span class="social-link-label">LeetCode</span>
+      leetcode.com/u/anuva0904
+    </a>
+
+  </div>
+
+</div>
+
+<!-- RIGHT SIDE -->
+
+<div>
+
+  <form
+    name="contact"
+    method="POST"
+    data-netlify="true"
+    netlify-honeypot="bot-field"
+    action="/success.html"
+    class="contact-form"
+  >
+
+    <!-- Required by Netlify -->
+    <input
+      type="hidden"
+      name="form-name"
+      value="contact"
+    >
+
+    <!-- Spam Protection -->
+    <p hidden>
+      <label>
+        Don't fill this out:
+        <input name="bot-field">
+      </label>
+    </p>
+
+    <div class="form-group">
+      <label class="form-label">
+        Name
+      </label>
+
+      <input
+        class="form-input"
+        type="text"
+        name="name"
+        placeholder="Your name"
+        required
+      >
     </div>
-    <div>
-      <div class="contact-form">
-        <div class="form-group">
-          <label class="form-label">Name</label>
-          <input class="form-input" type="text" placeholder="Your name">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Email</label>
-          <input class="form-input" type="email" placeholder="your@email.com">
-        </div>
-        <div class="form-group">
-          <label class="form-label">Message</label>
-          <textarea class="form-textarea" placeholder="Tell me about your project…"></textarea>
-        </div>
-        <button class="form-submit">Send Message →</button>
-      </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Email
+      </label>
+
+      <input
+        class="form-input"
+        type="email"
+        name="email"
+        placeholder="your@email.com"
+        required
+      >
     </div>
+
+    <div class="form-group">
+      <label class="form-label">
+        Message
+      </label>
+
+      <textarea
+        class="form-textarea"
+        name="message"
+        placeholder="Tell me about your project..."
+        required
+      ></textarea>
+    </div>
+
+    <button
+      type="submit"
+      class="form-submit"
+    >
+      Send Message →
+    </button>
+
+  </form>
+
+</div>
   </div>
 </section>
 
