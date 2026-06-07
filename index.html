@@ -184,8 +184,12 @@ nav{
 }
 #hero::before{
   content:'';
-  position:absolute;inset:0;z-index:1;
+  position:absolute;
+  inset:0;
+  z-index:1;
   background:rgba(2,6,23,.58);
+
+  pointer-events:none;
 }
 #hero::after{
   content:'';
@@ -1121,8 +1125,7 @@ footer{
     #1e3a8a 100%
   );
 }
-  .drawer-overlay{display:block}
-
+ 
   section{padding:70px 24px}
   #quote{padding:60px 24px}
 
