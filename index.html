@@ -1860,13 +1860,14 @@ footer{
 <div>
 
   <form
-    name="contact"
-    method="POST"
-    data-netlify="true"
-    netlify-honeypot="bot-field"
-    action="/success.html"
-    class="contact-form"
-  >
+  name="contact"
+  method="POST"
+  netlify
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  action="/success.html"
+  class="contact-form"
+>
 
     <!-- Required by Netlify -->
     <input
@@ -1948,6 +1949,11 @@ footer{
     <a href="mailto:singhanuva4@gmail.com">Email</a>
   </div>
 </footer>
+<form name="contact" netlify hidden>
+  <input type="text" name="name">
+  <input type="email" name="email">
+  <textarea name="message"></textarea>
+</form>
 
 <script>
 /* ── INJECT PHOTOS FROM CONFIG ─────────────────────────────────── */
