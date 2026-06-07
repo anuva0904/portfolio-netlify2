@@ -83,13 +83,14 @@ nav{
   left:0;
   right:0;
 
-  z-index:1000;
+  z-index:10000;
 
   padding:22px 40px;
 
   display:flex;
   justify-content:space-between;
   align-items:center;
+
 
   background:linear-gradient(
     180deg,
@@ -131,7 +132,7 @@ nav{
   display:none;
   position:fixed;top:0;right:0;bottom:0;width:280px;
   background:linear-gradient(160deg,var(--ink) 0%,var(--ink-soft) 100%);
-  z-index:999;
+  z-index:10001;
   padding:80px 40px 40px;
   border-left:1px solid rgba(247,7,118,0.25);
   transform:translateX(100%);
@@ -142,37 +143,43 @@ nav{
 .drawer.open{transform:translateX(0)}
 .drawer ul{list-style:none;display:flex;flex-direction:column;gap:28px}
 .drawer ul a{
-  font-family:'DM Mono',monospace;
-  font-size:13px;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  color:var(--warm-white);
-  opacity:0.85;
-  transition:color 0.3s var(--ease),opacity 0.3s var(--ease);
-  height:100%;
-
+  display:flex;
   justify-content:center;
-
   align-items:center;
 
-  gap:40px;
+  width:100%;
+  padding:16px;
+
+  font-family:'DM Mono',monospace;
+  font-size:13px;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--warm-white);
 }
 .drawer ul a:hover{color:var(--accent);opacity:1}
 .drawer-overlay{
-  display:none;
-  position:fixed;inset:0;
-  background:rgba(20,16,16,0.5);
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.5);
+
   z-index:998;
+
   opacity:0;
-  transition:opacity 0.4s ease;
+  visibility:hidden;
+
+  transition:.3s;
 }
-.drawer-overlay.open{opacity:1}
+
+.drawer-overlay.open{
+  opacity:1;
+  visibility:visible;
+}
 
 /* ── HERO ─────────────────────────────────────────────────────────── */
 #hero{
   position:relative;
   height:100vh;
-  min-height:600px;
+  min-height:100svh;
   display:flex;align-items:center;justify-content:center;
   overflow:hidden;
 }
@@ -289,9 +296,12 @@ nav{
 /* ── HERO PARALLAX COLUMNS ────────────────────────────────────────── */
 .hero-col{
   position:absolute;
-  display:none !important;
   z-index:2;
-  display:flex;flex-direction:column;gap:14px;
+
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+
   pointer-events:none;
 }
 .hero-frame{
@@ -313,6 +323,11 @@ nav{
 .col-far-right{right:1%;top:10vh;width:13vw}
 .col-bot-left{left:7%;top:78vh;width:11vw}
 .col-bot-right{right:7%;top:72vh;width:11vw}
+.social-link{
+  display:flex;
+  flex-wrap:wrap;
+  word-break:break-word;
+}
 
 /* ── SECTION COMMONS ──────────────────────────────────────────────── */
 section{padding:100px 60px}
@@ -638,7 +653,8 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:60px 0}
   position:fixed;
   inset:0;
 
-  
+  overflow-y:auto;
+  padding:30px 15px;
 
   background:rgba(2,6,23,.96);
 
@@ -647,9 +663,7 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:60px 0}
   display:none;
 
   flex-direction:column;
-
   justify-content:center;
-
   align-items:center;
 }
 
@@ -658,8 +672,9 @@ hr.divider{border:none;border-top:1px solid var(--border);margin:60px 0}
 }
 
 .project-modal img{
-  width:80%;
-  max-height:75vh;
+  width:100%;
+  max-width:1000px;
+  max-height:70vh;
   object-fit:contain;
 }
 
@@ -1155,6 +1170,11 @@ footer{
   .col-mid-left,.col-mid-right,.col-bot-left,.col-bot-right{display:none}
   .col-far-left{width:22vw}
   .col-far-right{width:22vw}
+  .hero-col{
+
+    display:none !important;
+
+  }
 
   /* Input iOS zoom prevention */
   .form-input,.form-textarea{font-size:16px}
@@ -1248,6 +1268,15 @@ footer{
   .skill-card h3{
     font-size:24px;
   }
+
+
+  .project-modal img{
+
+    width:95%;
+
+    max-height:55vh;
+
+  }
   
 
 
@@ -1282,28 +1311,6 @@ footer{
 <!-- HERO -->
 <section id="hero">
   <div id="hero-bg"></div>
-
-  <!-- Parallax Photo Columns -->
-  <div class="hero-col col-far-left" data-speed="0.28" id="col0">
-    <div class="hero-frame"><img id="hf0" alt=""></div>
-    <div class="hero-frame"><img id="hf1" alt=""></div>
-  </div>
-  <div class="hero-col col-mid-left" data-speed="0.52" id="col1">
-    <div class="hero-frame"><img id="hf2" alt=""></div>
-  </div>
-  <div class="hero-col col-mid-right" data-speed="0.44" id="col2">
-    <div class="hero-frame"><img id="hf3" alt=""></div>
-  </div>
-  <div class="hero-col col-far-right" data-speed="0.22" id="col3">
-    <div class="hero-frame"><img id="hf4" alt=""></div>
-    <div class="hero-frame"><img id="hf5" alt=""></div>
-  </div>
-  <div class="hero-col col-bot-left" data-speed="0.82" id="col4">
-    <div class="hero-frame"><img id="hf6" alt=""></div>
-  </div>
-  <div class="hero-col col-bot-right" data-speed="0.72" id="col5">
-    <div class="hero-frame"><img id="hf7" alt=""></div>
-  </div>
 
   <div class="hero-content">
     <span class="hero-hi">Hi, I'm</span>
@@ -2005,15 +2012,8 @@ drawerOv.addEventListener('click',() => toggleDrawer(false));
 document.querySelectorAll('.drawer-link').forEach(a => a.addEventListener('click',() => toggleDrawer(false)));
 
 /* ── SCROLL HANDLER ────────────────────────────────────────────── */
-const heroCols = document.querySelectorAll('.hero-col');
 function onScroll(){
   const sy = window.scrollY;
-
-  // Parallax columns
-  heroCols.forEach(col => {
-    const speed = parseFloat(col.dataset.speed) || 0;
-    col.style.transform = `translateY(${-sy * speed}px)`;
-  });
 
   // Hero fade ::after via CSS var
   const heroH = document.getElementById('hero').offsetHeight;
